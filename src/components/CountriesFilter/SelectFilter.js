@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Filter, Label, Select, Option } from "./CountriesFilterElements";
 
 const SelectFilter = (props) => {
@@ -22,8 +22,11 @@ const SelectFilter = (props) => {
         value={props.selected}
         selected={props.selected}
       >
+        <Option value="All countries">All countries</Option>
         {filteredRegionNames.map((regionName) => (
-          <Option value={regionName}>{regionName}</Option>
+          <Option key={regionName} value={regionName}>
+            {regionName}
+          </Option>
         ))}
       </Select>
     </Filter>

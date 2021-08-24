@@ -1,8 +1,12 @@
 import React from "react";
-import {} from "./CountryItemElements";
+import { CountriesListItem } from "./CountryItemElements";
 
-const CountryItem = () => {
-  return <div></div>;
+const CountryItem = (props) => {
+  return (
+    <CountriesListItem>
+      <h3>{props.name}</h3>
+    </CountriesListItem>
+  );
 };
 
 export default CountryItem;

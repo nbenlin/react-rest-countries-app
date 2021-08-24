@@ -4,12 +4,20 @@ import CountriesList from "../CountriesList";
 import {} from "./CountriesElements";
 
 const Countries = (props) => {
-  const [filteredCountriesByRegion, setFilteredCountriesByRegion] = useState();
-  const [filteredCountriesByName, setFilteredCountriesByName] = useState();
+  const [filteredCountriesByRegion, setFilteredCountriesByRegion] =
+    useState("All countries");
+  // const [filteredCountriesByName, setFilteredCountriesByName] = useState();
 
-  const filterChangeHandler = (selectedRegion) => {
-    setFilteredCountriesByRegion(selectedRegion);
+  const filterChangeHandler = (selectedCountryByRegion) => {
+    setFilteredCountriesByRegion(selectedCountryByRegion);
   };
+
+  const filteredCountriesWithSelectbox = props.items.filter((country) => {
+    if (filteredCountriesByRegion === "All countries") {
+      return country;
+    }
+    return country.region === filteredCountriesByRegion;
+  });
 
   return (
     <>
@@ -18,7 +26,7 @@ const Countries = (props) => {
         onChangeFilter={filterChangeHandler}
         selected={filteredCountriesByRegion}
       />
-      <CountriesList />
+      <CountriesList items={filteredCountriesWithSelectbox} />
     </>
   );
 };
