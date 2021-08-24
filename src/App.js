@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Countries from "./components/Countries";
+import InfoSection from "./components/Info";
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -17,6 +18,7 @@ const App = () => {
 
   return (
     <>
+      <InfoSection />
       <Countries items={data} />
     </>
   );

@@ -1,10 +1,11 @@
 import React from "react";
-import { CountriesListItem } from "./CountryItemElements";
+import { CountriesListItem, Title, SubTitle } from "./CountryItemElements";
 
 const CountryItem = (props) => {
   return (
     <CountriesListItem>
-      <h3>{props.name}</h3>
+      <Title>{props.name}</Title>
+      <SubTitle>{props.alpha3Code}</SubTitle>
     </CountriesListItem>
   );
 };

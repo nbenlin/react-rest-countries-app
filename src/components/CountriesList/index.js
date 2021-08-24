@@ -6,7 +6,11 @@ const CountriesList = (props) => {
   return (
     <CountriesListGroup>
       {props.items.map((item) => (
-        <CountryItem key={item.numericCode} name={item.name} />
+        <CountryItem
+          key={item.numericCode}
+          name={item.name}
+          alpha3Code={item.alpha3Code}
+        />
       ))}
     </CountriesListGroup>
   );
