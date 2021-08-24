@@ -1,8 +1,8 @@
-import { useState, UseEffect, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Countries from "./components/Countries";
 
 const App = () => {
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
 
   const fetchCountriesData = () => {
     fetch("https://restcountries.eu/rest/v2/all")
