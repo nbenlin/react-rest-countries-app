@@ -14,6 +14,7 @@ export const FilterContainer = styled.div`
 `;
 
 export const Filter = styled.div`
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -28,8 +29,22 @@ export const Label = styled.label`
 `;
 
 /* Select filter elements */
-export const Select = styled.select`
+export const SelectWrap = styled.div`
   width: 40%;
+  position: relative;
+`;
+
+export const Select = styled.select`
+  /* appearance: none; */
+  width: 40%;
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid ${COLORS.weebyBlue};
+  border-radius: 5px;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 export const Option = styled.option``;
@@ -41,7 +56,7 @@ export const Input = styled.input`
   font-size: 15px;
   border: none;
   border: 1px solid ${COLORS.weebyBlue};
-  border-radius: 4px;
+  border-radius: 5px;
   color: ${COLORS.dark};
 
   &:focus {
