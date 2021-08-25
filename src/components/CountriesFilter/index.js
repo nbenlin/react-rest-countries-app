@@ -11,7 +11,10 @@ const CountriesFilter = (props) => {
         onChangeRegionFilter={props.onChangeRegionFilter}
         selected={props.selected}
       />
-      <InputFilter onChangeNameFilter={props.onChangeNameFilter} />
+      <InputFilter
+        onChangeNameFilter={props.onChangeNameFilter}
+        onFocusHandler={props.onFocusHandler}
+      />
     </FilterContainer>
   );
 };

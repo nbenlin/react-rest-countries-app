@@ -7,7 +7,9 @@ const Countries = (props) => {
   const [filteredCountriesByRegion, setFilteredCountriesByRegion] =
     useState("All countries");
   const [filteredCountriesByName, setFilteredCountriesByName] = useState();
+  const [inputIsTouched, setInputIsTouched] = useState(false);
 
+  /* Value handlers */
   const filterRegionChangeHandler = (selectedCountryByRegion) => {
     setFilteredCountriesByRegion(selectedCountryByRegion);
   };
@@ -16,6 +18,13 @@ const Countries = (props) => {
     setFilteredCountriesByName(selectedCountryByName);
   };
 
+  const inputFilterFocusHandler = () => {
+    setInputIsTouched(true);
+  };
+
+  /* end value handlers */
+
+  /* Value filters */
   const filteredCountriesWithSelectbox = props.items.filter((country) => {
     if (filteredCountriesByRegion === "All countries") {
       return country;
@@ -26,6 +35,7 @@ const Countries = (props) => {
   const filteredCountriesWithInput = props.items.filter((country) => {
     return country.name.toLowerCase() === filteredCountriesByName;
   });
+  /* end value filters */
 
   return (
     <CountriesContainer>
@@ -33,9 +43,11 @@ const Countries = (props) => {
         items={props.items}
         onChangeRegionFilter={filterRegionChangeHandler}
         onChangeNameFilter={filterNameChangeHandler}
+        onFocusHandler={inputFilterFocusHandler}
         selected={filteredCountriesByRegion}
       />
       <CountriesList
+        isTouchedToInput={inputIsTouched}
         items={
           filteredCountriesByName
             ? filteredCountriesWithInput

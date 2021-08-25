@@ -5,4 +5,5 @@ export const COLORS = {
   LeatherShadeBlue: "#457b9d",
   dark: "#1d3557",
   white: "#fff",
+  warning: "#FFCC00",
 };
