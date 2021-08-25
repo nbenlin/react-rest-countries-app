@@ -3,7 +3,7 @@ import { Filter, Input, Label } from "./CountriesFilterElements";
 
 const InputFilter = (props) => {
   const inputChangeHandler = (event) => {
-    props.onChangeNameFilter(event.target.value);
+    props.onChangeNameFilter(event.target.value.toLowerCase());
   };
   const inputFocusHandler = () => {
     props.onFocusHandler();

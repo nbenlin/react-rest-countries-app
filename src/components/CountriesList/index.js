@@ -4,6 +4,9 @@ import {
   CountriesListGroup,
   FallbackContainer,
   Fallback,
+  CountriesListContainer,
+  ButtonWrapper,
+  Button,
 } from "./CountriesListElements";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
@@ -11,7 +14,12 @@ import { COLORS } from "../../colors";
 
 const CountriesList = (props) => {
   /* If user touched to text input filter and no items */
-  if (props.items.length === 0 && props.isTouchedToInput) {
+  const [offset, setOffset] = useState(0);
+  const itemsPerPage = 12;
+  const isFallback = props.items.length === 0 && props.isTouchedToInput;
+
+  /* If there is no items and input was touched */
+  if (isFallback) {
     return (
       <FallbackContainer>
         <Loader
@@ -27,16 +35,57 @@ const CountriesList = (props) => {
     );
   }
 
+  const changePageHandler = (offset) => {
+    setOffset(offset);
+  };
+
+  /* Countries list items */
+  let listOfCountries = [];
+  for (
+    let i = offset * itemsPerPage;
+    i < offset * itemsPerPage + itemsPerPage;
+    i++
+  ) {
+    if (i >= props.items.length) {
+      break;
+    }
+    listOfCountries.push(props.items[i]);
+  }
+
+  /* Create CountryItem components */
+  listOfCountries = listOfCountries.map((item, index) => {
+    return (
+      <CountryItem
+        key={index}
+        id={item.callingCodes}
+        name={item.name}
+        population={item.population}
+        capital={item.capital}
+        region={item.region}
+        subregion={item.subregion}
+        area={item.area}
+        flag={item.flag}
+        alpha3Code={item.alpha3Code}
+        latlng={item.latlng}
+      />
+    );
+  });
+
+  /*Create Button components */
+  let listOfButtons = [];
+  for (let i = 1; i <= Math.ceil(props.items.length / itemsPerPage); i++) {
+    const buttonElement = (
+      <Button key={i} onClick={() => changePageHandler(i - 1)}>
+        {i}
+      </Button>
+    );
+    listOfButtons.push(buttonElement);
+  }
   return (
-    <CountriesListGroup>
-      {props.items.map((item) => (
-        <CountryItem
-          key={item.numericCode}
-          name={item.name}
-          alpha3Code={item.alpha3Code}
-        />
-      ))}
-    </CountriesListGroup>
+    <CountriesListContainer>
+      <CountriesListGroup>{listOfCountries}</CountriesListGroup>
+      <ButtonWrapper>{listOfButtons}</ButtonWrapper>
+    </CountriesListContainer>
   );
 };
 

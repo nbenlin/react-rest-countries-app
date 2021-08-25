@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Filter,
-  Label,
-  Select,
-  Option,
-  ArrowDown,
-} from "./CountriesFilterElements";
+import { Filter, Label, Select, Option } from "./CountriesFilterElements";
 
 const SelectFilter = (props) => {
   const dropdownChangeHandler = (event) => {

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { COLORS } from "../../colors";
 
 export const CountriesContainer = styled.section`
   max-width: 80%;
