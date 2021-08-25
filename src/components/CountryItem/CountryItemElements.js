@@ -36,4 +36,6 @@ export const SubTitle = styled.p`
   -webkit-box-shadow: 1px 1px 4px 1px rgba(69, 123, 157, 0.5);
   box-shadow: 1px 1px 4px 1px rgba(69, 123, 157, 0.5);
   background-color: #fff;
+  font-size: 16px;
+  font-weight: 500;
 `;

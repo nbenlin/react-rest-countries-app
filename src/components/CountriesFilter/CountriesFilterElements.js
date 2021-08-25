@@ -5,7 +5,7 @@ export const FilterContainer = styled.div`
   display: flex;
   align-items: center;
   padding: 20px;
-  height: 180px;
+  height: 120px;
   background-color: ${COLORS.white};
   -webkit-box-shadow: 1px 1px 4px 1px rgba(69, 123, 157, 0.5);
   box-shadow: 1px 1px 4px 1px rgba(69, 123, 157, 0.5);
