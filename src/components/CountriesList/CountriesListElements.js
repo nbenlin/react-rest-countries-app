@@ -41,6 +41,7 @@ export const ButtonWrapper = styled.div`
 
 export const Button = styled.button`
   border: none;
+  font-size: 12px;
   border-radius: 6px;
   margin: 12px 4px;
   padding: 7px 11px;
