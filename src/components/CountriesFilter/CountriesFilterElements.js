@@ -15,8 +15,13 @@ export const FilterContainer = styled.div`
 
 export const Filter = styled.div``;
 
-export const Label = styled.label``;
+export const Label = styled.label`
+  font-size: 18px;
+  width: 50%;
+`;
 
-export const Select = styled.select``;
+export const Select = styled.select`
+  width: 50%;
+`;
 
 export const Option = styled.option``;
