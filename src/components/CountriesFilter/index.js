@@ -8,10 +8,10 @@ const CountriesFilter = (props) => {
     <FilterContainer>
       <SelectFilter
         items={props.items}
-        onChangeFilter={props.onChangeFilter}
+        onChangeRegionFilter={props.onChangeRegionFilter}
         selected={props.selected}
       />
-      <InputFilter />
+      <InputFilter onChangeNameFilter={props.onChangeNameFilter} />
     </FilterContainer>
   );
 };

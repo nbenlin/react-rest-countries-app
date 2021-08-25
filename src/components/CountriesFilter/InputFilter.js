@@ -2,10 +2,14 @@ import React from "react";
 import { Filter, Input, Label } from "./CountriesFilterElements";
 
 const InputFilter = (props) => {
+  const inputChangeHandler = (event) => {
+    props.onChangeNameFilter(event.target.value);
+  };
+
   return (
     <Filter>
       <Label inputlabel>Search country:</Label>
-      <Input type="text" />
+      <Input onChange={inputChangeHandler} type="text" />
     </Filter>
   );
 };

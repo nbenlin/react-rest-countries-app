@@ -9,7 +9,7 @@ import {
 
 const SelectFilter = (props) => {
   const dropdownChangeHandler = (event) => {
-    props.onChangeFilter(event.target.value);
+    props.onChangeRegionFilter(event.target.value);
   };
 
   /* Get all regions and filter the same values */
