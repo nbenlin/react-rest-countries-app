@@ -1,6 +1,7 @@
 import React from "react";
 import { FilterContainer } from "./CountriesFilterElements";
 import SelectFilter from "./SelectFilter";
+import InputFilter from "./InputFilter";
 
 const CountriesFilter = (props) => {
   return (
@@ -10,6 +11,7 @@ const CountriesFilter = (props) => {
         onChangeFilter={props.onChangeFilter}
         selected={props.selected}
       />
+      <InputFilter />
     </FilterContainer>
   );
 };

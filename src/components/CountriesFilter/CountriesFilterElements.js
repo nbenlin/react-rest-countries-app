@@ -13,15 +13,38 @@ export const FilterContainer = styled.div`
   margin-top: 30px;
 `;
 
-export const Filter = styled.div``;
-
-export const Label = styled.label`
-  font-size: 18px;
-  width: 50%;
+export const Filter = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
+export const Label = styled.label`
+  font-size: 16px;
+  color: ${COLORS.dark};
+  font-weight: 500;
+  width: ${({ inputlabel }) => (inputlabel ? "18%" : "30%")};
+`;
+
+/* Select filter elements */
 export const Select = styled.select`
-  width: 50%;
+  width: 40%;
 `;
 
 export const Option = styled.option``;
+
+/* Input filter elements */
+export const Input = styled.input`
+  width: 50%;
+  padding: 5px;
+  font-size: 15px;
+  border: none;
+  border: 1px solid ${COLORS.weebyBlue};
+  border-radius: 4px;
+  color: ${COLORS.dark};
+
+  &:focus {
+    outline: none;
+  }
+`;
