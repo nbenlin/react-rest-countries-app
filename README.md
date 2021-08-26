@@ -1,5 +1,6 @@
+<img src="ReadMeImages/react-logo.png">
 ## About the project
-This is an application that gives some information about all countries in the world.
+This is an react application that gives some information about all countries in the world.
 
 -See all countries on the homepage as a list
 - Search for a specific country
@@ -8,7 +9,7 @@ This is an application that gives some information about all countries in the wo
 
 ## Was build with
 
-# Getting Started with Create React App
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
