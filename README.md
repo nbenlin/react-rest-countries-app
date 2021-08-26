@@ -18,7 +18,7 @@ This is an react application that gives some information about all countries in 
 
 #### Requirements
 - [node]
- -[npm]
+- [npm]
 
 ## Package installation
 Execute the following command on your terminal to install all the needed packages:
