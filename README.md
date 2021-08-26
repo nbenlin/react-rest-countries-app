@@ -1,4 +1,4 @@
-<img src="ReadMeImages/ReadMeImage.png" />
+<img src="ReadMeImages/ReadmeImage.png" />
 
 ## About the project
 This is an react application that gives some information about all countries in the world.
