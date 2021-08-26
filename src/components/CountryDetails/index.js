@@ -17,7 +17,7 @@ const CountryDetails = (props) => {
       <Card>
         <CloseButton onClick={props.onHideDetail} />
         <CardHeader>
-          <Title>hellow</Title>
+          <Title>{props.item.name}</Title>
           <Image></Image>
         </CardHeader>
         <CardBody>

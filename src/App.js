@@ -6,7 +6,7 @@ import InfoSection from "./components/Info";
 const App = () => {
   const [data, setData] = useState([]);
   const [detailIsShown, setDetailIsShown] = useState(false);
-  const [selectedCountry, setSelectedCountry] = useState();
+  const [selectedCountry, setSelectedCountry] = useState({});
 
   const fetchCountriesData = () => {
     fetch("https://restcountries.eu/rest/v2/all")
@@ -29,11 +29,16 @@ const App = () => {
     setSelectedCountry(selectedCountryDetails);
   };
 
-  console.log("In app js", selectedCountry);
+  console.log("In app js", selectedCountry.name);
 
   return (
     <Fragment>
-      {detailIsShown && <CountryDetails onHideDetail={hideDetailHandler} />}
+      {detailIsShown && (
+        <CountryDetails
+          onHideDetail={hideDetailHandler}
+          item={selectedCountry}
+        />
+      )}
       <InfoSection />
       <main>
         <Countries

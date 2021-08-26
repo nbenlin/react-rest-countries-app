@@ -3,14 +3,12 @@ import { CountriesListItem, Title, SubTitle } from "./CountryItemElements";
 
 const CountryItem = (props) => {
   const onSelectedCountryDetailHandler = () => {
-    props.selectedHandler(props);
+    props.onShowDetail();
+    return props.selectedHandler(props);
   };
 
   return (
-    <CountriesListItem
-      onClick={props.onShowDetail}
-      onClick={onSelectedCountryDetailHandler}
-    >
+    <CountriesListItem onClick={onSelectedCountryDetailHandler}>
       <Title>{props.name}</Title>
       <SubTitle>{props.alpha3Code}</SubTitle>
     </CountriesListItem>
