@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CountryItem from "../CountryItem";
 import {
   CountriesListGroup,
@@ -57,6 +57,8 @@ const CountriesList = (props) => {
     return (
       <CountryItem
         key={index}
+        onShowDetail={props.onShowDetail}
+        selectedHandler={props.selectedHandler}
         id={item.callingCodes}
         name={item.name}
         population={item.population}

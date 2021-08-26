@@ -47,6 +47,8 @@ const Countries = (props) => {
         selected={filteredCountriesByRegion}
       />
       <CountriesList
+        selectedHandler={props.selectedHandler}
+        onShowDetail={props.onShowDetail}
         isTouchedToInput={inputIsTouched}
         items={
           filteredCountriesByName
