@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import CountryItem from "../CountryItem";
 import {
   CountriesListGroup,
@@ -56,19 +56,10 @@ const CountriesList = (props) => {
   listOfCountries = listOfCountries.map((item, index) => {
     return (
       <CountryItem
+        items={item}
         key={index}
         onShowDetail={props.onShowDetail}
         selectedHandler={props.selectedHandler}
-        id={item.callingCodes}
-        name={item.name}
-        population={item.population}
-        capital={item.capital}
-        region={item.region}
-        subregion={item.subregion}
-        area={item.area}
-        flag={item.flag}
-        alpha3Code={item.alpha3Code}
-        latlng={item.latlng}
       />
     );
   });

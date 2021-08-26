@@ -29,8 +29,6 @@ const App = () => {
     setSelectedCountry(selectedCountryDetails);
   };
 
-  console.log("In app js", selectedCountry.name);
-
   return (
     <Fragment>
       {detailIsShown && (
