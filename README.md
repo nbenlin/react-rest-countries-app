@@ -3,7 +3,7 @@
 ## About the project
 This is an react application that gives some information about all countries in the world.
 
--See all countries on the homepage as a list
+- See all countries on the homepage as a list
 - Search for a specific country
 - Filter countries by region and name
 - Click on a country to see more detailed information on a separate page
